@@ -1,6 +1,10 @@
-Q1: [img]
-Q2: [img]
-Q3: [img]
+# Ibrhaim Johar Farooqi
+## 23K-0074
+### Ice breaking activity and introduction. Studied O & A Levels from The City School, PAF Chapter. We also talked about introverts and extroverts.  
+
+Q1: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/cb080c48-4afa-4b31-9277-1815be45c5df)
+Q2: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/a0776fc9-6158-4dc1-a977-f89a219485ff)
+Q3: 
 Q4: [img]
 Q5: [img]
 Q6: [img]
