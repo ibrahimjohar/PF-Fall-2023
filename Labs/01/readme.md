@@ -7,5 +7,5 @@ Q2: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/a0776fc9-6
 Q3: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/a32ac7f7-c3f6-4a1e-976e-73a66e59b932)
 Q4: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/78b5133f-2194-49cd-81c2-5d1508ca9341)
 Q5: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/0b0272e0-d6a9-4891-85c0-409a927d119e)
-Q6: [img]
+Q6: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/9bd79d77-3b75-40b1-a4a1-a82787cf226e)
 Q7: [img]
