@@ -20,7 +20,9 @@ Flowchart:
 Problem 5: 
 Process: 
 ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/0055da96-f9cb-4cbf-a909-c3a28c161fad)
-Flowchart: 
+Flowchart (1/2): 
 ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/718c040f-85be-4893-aa0d-45ca99ad49c0)
+
+Flowchart (2/2):
 ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/0efa222b-3213-4c16-861b-0f855c4d6a2f)
 
