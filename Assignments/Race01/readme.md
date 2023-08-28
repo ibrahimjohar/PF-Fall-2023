@@ -2,27 +2,23 @@
 ## Ibrahim Johar Farooqi
 ## 23K-0074
 
-Problem 1: 
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/4f5a4fc3-1339-47d2-aed3-4433e848ced0)
+Problem 1: ![IMG_5208](https://github.com/ibrahimjohar/PfFall23/assets/34939623/8e183d81-dd0f-4a6c-aa34-98cb6469688e)
 
-Problem 2: 
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/034e38d3-cc85-49d6-8df6-909f9c61a695)
+Problem 2: ![IMG_5209](https://github.com/ibrahimjohar/PfFall23/assets/34939623/3e9cd845-15de-4916-85a8-179d4dad95d1)
 
-Problem 3: 
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/08929215-7fce-476f-b824-5bfd5553a71f)
+Problem 3: ![IMG_5210](https://github.com/ibrahimjohar/PfFall23/assets/34939623/e530e2a8-74a3-4221-becf-1d7aa9452852)
 
 Problem 4: 
-Process: 
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/87ecca9d-7a09-4f12-a7e7-170df71646d2)
-Flowchart: 
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/2c50a128-842f-4edb-8e05-bc026ccaca7b)
+Process: ![IMG_5211](https://github.com/ibrahimjohar/PfFall23/assets/34939623/ba60369f-86ea-4c5a-a504-85513c6149cd)
 
+Flowchart: ![IMG_5212](https://github.com/ibrahimjohar/PfFall23/assets/34939623/04ac1601-d2f9-41cc-8412-b42ca85dfcf7)
+ 
 Problem 5: 
-Process: 
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/0055da96-f9cb-4cbf-a909-c3a28c161fad)
-Flowchart (1/2): 
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/718c040f-85be-4893-aa0d-45ca99ad49c0)
+Process: ![IMG_5213](https://github.com/ibrahimjohar/PfFall23/assets/34939623/14d5e1e7-7c2e-4271-b92a-6e3a8ee83a4b)
 
-Flowchart (2/2):
-![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/0efa222b-3213-4c16-861b-0f855c4d6a2f)
+Flowchart (1/2): ![IMG_5214](https://github.com/ibrahimjohar/PfFall23/assets/34939623/55e8076e-3ec3-42c8-8f41-09c5ae79b1d6)
+
+Flowchart (2/2): ![IMG_5215](https://github.com/ibrahimjohar/PfFall23/assets/34939623/bd2e1236-49fb-4321-bfb5-26e93efd7d11)
+
+
 
