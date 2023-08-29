@@ -6,6 +6,7 @@ Task2: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/9d174ee
 Task3: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/8eccd103-592a-4d26-8e4f-e7ca9506861d)
 Task4: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/44e580e4-0558-41e1-abf4-12a53a2b85a5)
 Task5: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/463dd466-4e11-4715-b965-6bcc34e0bb3d)
+Task6: ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/bbadb7ae-8c6f-4d0d-8825-1d37b04b03e2)
 
 
 
