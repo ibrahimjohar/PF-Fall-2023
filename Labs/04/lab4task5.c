@@ -1,12 +1,10 @@
 /*
  * Programmer: Ibrahim Johar Farooqi
  * Date: 12 September 2023
- * Description: Write a program that asks user for appropiate inputs and then uses the quadratic formula to return the solutions. 
+ * Description: Write a program that asks DOB of two persons and then prints who is older. 
  */
 
 #include <stdio.h>
-#include <math.h>
-
 
 int main(){
 	
