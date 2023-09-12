@@ -7,19 +7,25 @@
 #include <stdio.h>
 
 int main(){
+	//declaration and initialisation 
 	int i = 0, j, n;
+	//input n
 	printf("Enter number of lines for the pattern (****): ");
 	scanf("%d" , &n);
+	//store n in a counter, i
 	i = n;
+	//loop condition
 	while (i >= 1)	
 	{
 		j = 1;
+		//outputs * in the same line whenever this loop runs
 		while (j <= n)
-		{
+		{ 
 			printf("*");
 			j = j + 1;		
 		}
 		i = i - 1;
+		//breaks line once a line has printed exactly *n(s) 
 		printf("\n");
 	}
 
