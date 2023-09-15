@@ -10,7 +10,7 @@ int main(){
 	
 	//declaration and initialisation of variables 
 	
-	int date1 = 0, date2 = 0, month1 = 0, month2 = 0, year1 = 0, year2 = 0, nYears = 0, nMonths = 0, nDays = 0; 
+	int date1 = 0, date2 = 0, month1 = 0, month2 = 0, year1 = 0, year2 = 0; 
 	
 	//program welcome statement
  	
@@ -19,60 +19,52 @@ int main(){
 
 	//input of DOB of person 1
 	
-	printf("Enter the day of birth of person 1: ");
+	printf("Enter the day of birth of Person 1: ");
 	scanf("%d" , &date1);
-	printf("Enter the month of birth of person 1: ");
+	printf("Enter the month of birth of Person 1: ");
 	scanf("%d" , &month1);
-	printf("Enter the year of birth of person 1: ");
+	printf("Enter the year of birth of Person 1: ");
 	scanf("%d" , &year1);
 
 	//input of DOB of person 2	
 
-	printf("Enter the day of birth of person 2: ");
+	printf("Enter the day of birth of Person 2: ");
 	scanf("%d" , &date2);
-	printf("Enter the month of birth of person 2: ");
+	printf("Enter the month of birth of Person 2: ");
 	scanf("%d" , &month2);
-	printf("Enter the year of birth of person 2: ");
+	printf("Enter the year of birth of Person 2: ");
 	scanf("%d" , &year2);
 
-	//calculation
-	
-	nYears = year1 - year2;
-	nMonths = month1 - month2;
-	nDays = date1 - date2;
+	//conditional checking
 
-	//determining whether person 1 is older or person 2
-
-	if (nYears < 0) 
+	if (year1 > year2)
 	{
-		printf("Person 1 is a few years older than Person 2");	
+		printf("Person 2 is older than Person 1");
+	}
+	else if (year2 > year1)
+	{
+		printf("Person 1 is older than Person 2");	
+	}
+	else if (month1 > month2)
+	{
+		printf("Person 2 is older than Person 1");
+	}
+	else if (month2 > month1)
+	{
+		printf("Person 1 is older than Person 2");	
+	}
+	else if (date1 > date2)
+	{
+		printf("Person 2 is older than Person 1");
+	}
+	else if (date2 > date1)
+	{
+		printf("Person 1 is older than Person 2");	
 	}
 	else 
 	{
-		printf("Person 2 is a few years older than Person 1");
-	}  
-	if (nYears = 0)
-	{
-		if (nMonths = 0)
-		{
-			if (nDays < 0)
-			{
-				printf("Person 1 is a few days older than Person 2");	
-			}
-			else
-			{
-				printf("Person 2 is a few days older than Person 1");
-			}
-		}  	
-		else if (nMonths < 0) 
-		{
-			printf("Person 1 is a few months older than Person 2");	
-		}
-		else 
-		{
-			printf("Person 2 is a few months older than Person 1");
-		}
+		printf("Both persons have the same date of birth, hence they are both of the same age!");
 	}
-		
+	
 return 0;
-}//end main()
+}//endmain()
