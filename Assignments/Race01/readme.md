@@ -25,7 +25,9 @@ Process: ![IMG_5451](https://github.com/ibrahimjohar/PfFall23/assets/34939623/fc
 Flowchart: ![IMG_5452](https://github.com/ibrahimjohar/PfFall23/assets/34939623/710aae48-5f5d-4dff-837b-6a6a8940b965)
 
 Problem 7: 
+
 Link to flowchart: https://lucid.app/lucidchart/170ac918-789a-46e4-84e0-7fd3ed5de992/edit?viewport_loc=-277%2C-1649%2C2634%2C1293%2C0_0&invitationId=inv_bfea6dc3-20ed-46fc-861b-988554e0977f
+
 (1/6): ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/8991dd52-f6fb-43bd-b09f-d559ca0c89b2)
 (2/6): ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/1f103a36-28ed-4eeb-9705-f25b054c4005)
 (3/6): ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/55ae7d25-8f26-4124-ba63-ac1bf444655a)
