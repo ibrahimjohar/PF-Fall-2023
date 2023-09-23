@@ -10,45 +10,30 @@ int main(){
 	
 	//decleration of variables
 
-	int bit1, bit2, bit3, bit4, bit5, bit6, bit7, bit8;
+	int num, ans, bitCheck;
 	
-	//input individuals bits of an 8 bit number
+	//input 8 bit denary number
 
-	printf("Enter bit 1: ");
-	scanf("%d", &bit1);
-	printf("Enter bit 2: ");
-	scanf("%d", &bit2);
-	printf("Enter bit 3: ");
-	scanf("%d", &bit3);
-	printf("Enter bit 4: ");
-	scanf("%d", &bit4);
-	printf("Enter bit 5: ");
-	scanf("%d", &bit5);
-	printf("Enter bit 6: ");
-	scanf("%d", &bit6);
-	printf("Enter bit 7: ");
-	scanf("%d", &bit7);
-	printf("Enter bit 8: ");
-	scanf("%d", &bit8);
+	printf("Enter your 8 bit number here in the denary form (less than 256): ");
+	scanf("%d", &num);
 	
-	//turning off the 4th and 7th bit (if they are on) condition
-
-	if (bit4 == 1 && bit7 == 1)
+	//checking if bit 4 and bit 7 are on or not
+	
+	bitCheck = num & 0b01001000;
+	
+	//turning bit 4 and bit 7 off
+	
+	if (bitCheck == 72)
 	{
-		bit4 = 0;
-		bit7 = 0;
-		printf("Bit4 and Bit 7 have now been turned off.\n");
+		ans = num ^ 0b01001000;
 	}
-	
-	//output the updated or unchanged 8 bit number
+	else
+	{
+		ans = num;
+	}
 
-	printf("8-bit number: %d", bit1);
-	printf("%d", bit2);
-	printf("%d", bit3);
-	printf("%d", bit4);
-	printf("%d", bit5);
-	printf("%d", bit6);
-	printf("%d", bit7);
-	printf("%d", bit8);
+	//output 
+
+	printf("The updated or unchanged 8 bit number in integer form is: %d" , ans);
 
 }//end main ()
