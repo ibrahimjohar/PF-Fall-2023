@@ -22,39 +22,39 @@ int main()
 		switch(count)
 		{
 			case 0:
-				printf("Zero");
+				printf("Zero, ");
 				break;
 			case 1:
-				printf("One");
+				printf("One, ");
 				break;
 			case 2:
-				printf("Two");
+				printf("Two, ");
 				break;
 			case 3:
-				printf("Three");
+				printf("Three, ");
 				break;
 			case 4:
-				printf("Four");
+				printf("Four, ");
 				break;
 			case 5:
-				printf("Five");
+				printf("Five, ");
 				break;
 			case 6:
-				printf("Six");
+				printf("Six, ");
 				break;
 			case 7:
-				printf("Seven");
+				printf("Seven, ");
 				break;
 			case 8:
-				printf("Eight");
+				printf("Eight, ");
 				break;
 			case 9:
-				printf("Nine");
+				printf("Nine, ");
 				break;
 			default:
 				if(count % 2 == 0)
 				{
-					printf("Even.");
+					printf("Even, ");
 				}
 				else
 				{
