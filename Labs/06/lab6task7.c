@@ -8,19 +8,22 @@
 
 int main()
 {
-	int size = 1;
-	printf("Size of your array: ");
-	scanf("%d", &size);
-	
-	int array[size];
-	
-	for (int i = 0, sum = 0; i <= size; i++)
-	{
-		array[i] = array[i] + 1; 
-		if (i == size)
+		int array[9]; //declare array 
+		int sum = 0; //declare and initialise sum variable
+		
+		printf("Enter 9 integers: \n"); //prompt user to enter 9 integers 
+		
+		for (int count = 1; count <= 9; ++count) //for loop start
 		{
-			sum = sum + array[i];
-			printf("The sum of the size of your array is: %d", sum);	
-		}
-	}
-}
+			printf("Enter integer %d here: ", count); //prompt user to enter integer(n) here
+			scanf("%d", &array[count]); //store integer(n) in array[]
+		}//end for loop
+	
+		for (int count = 1; count <= 9; ++count) //for loop start
+		{
+			sum = sum + array[count]; //sum the value stored in sum with the individual array integers 
+		} //end for loop 
+		
+		printf("The sum is: %d", sum); //print the sum of the array
+		
+}//end main()
