@@ -13,25 +13,27 @@
 
 int main()
 {
-    char pass[25];
-    char stored[] = "Secure123.";
+    char pass[25];//declare password string
+    char stored[] = "Secure123.";//declare and initialise stored password string
+    
+    //input password from user
     printf("Enter password: ");
     gets(pass); 
 
-    if (strlen(pass)>=8)
+    if (strlen(pass)>=8)//check if password has atleast 8 characters
     {
-        if (strcmp(pass, stored) == 0)
+        if (strcmp(pass, stored) == 0)//check if the user entered password is same as the stored password
         {
             printf("Login Successful. Welcome!");
         }
         else
         {
             printf("Login failed. Incorrect password");
-        }
+        }//end inner if statement
     }
     else
     {
         printf("Password length should be atleast 8 characters.");
-    }
+    }//end outer if statement
 
-}
+}//end main()
