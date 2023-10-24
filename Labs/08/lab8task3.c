@@ -1,3 +1,10 @@
+/*
+ * Programmer: Ibrahim Johar Farooqi
+ * Date: 24 October 2023
+ * Description: You are working on a text processing program. Create a C program that reads a text input from the user and searches for a specific character (e.g., 'a') 
+ *              within the text using the strchr function. Display the total count of occurrences of the character in the input text.
+ */
+
 #include <stdio.h>
 #include <string.h>
 
