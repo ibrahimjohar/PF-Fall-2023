@@ -9,35 +9,36 @@
 
 #include <stdio.h>
 
-int decideCarUsage(int numeric, int dayNum);
+int decideCarUsage(int numeric, int dayNum);//function defition of decideCarUsage
 
 int main()
 {
-    int numeric, dayNum;
+    int numeric, dayNum;//declare user input variables
+
+    //input from user the numeric part
     printf("Enter numeric part of car: ");
     scanf("%d", &numeric);
-
+    //input from user day number
     printf("Enter day of the week (1-7): ");
     scanf("%d", &dayNum);
 
-    if (decideCarUsage(numeric, dayNum) == 1)
+    if (decideCarUsage(numeric, dayNum) == 1)//check if decideCarUsage returns 1
     {
-        printf("The car can be used.");
+        printf("The car can be used.");//print message
     }
     else
     {
-        printf("The car cannot be used.");
-    }
-    
-}
+        printf("The car cannot be used.");//print message
+    }//end if statement
+}//end main()
 
-int decideCarUsage(int numeric, int dayNum)
+int decideCarUsage(int numeric, int dayNum)//function to determine if car can be used on a specific day
 {
-    if ((numeric % 2 == 0) && (dayNum % 2 == 0))
+    if ((numeric % 2 == 0) && (dayNum % 2 == 0))//check if numeric part and number of day is even
     {
         return 1;
     }
-    else if ((numeric % 2 != 0) && (dayNum % 2 != 0))
+    else if ((numeric % 2 != 0) && (dayNum % 2 != 0))//check if numeric part and number of day is odd
     {
         return 1;
     }
@@ -45,4 +46,4 @@ int decideCarUsage(int numeric, int dayNum)
     {
         return 0;
     }
-}
+}//end decideCarUsage
