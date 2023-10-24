@@ -26,7 +26,7 @@ int main()
     //output the answer by calling the function 
     printf("The answer is: %d", calculator(num1, num2, op));
 
-}
+}//end main()
 
 
 int calculator(int num1, int num2, char op) //function to calculate arithematic operation between two numbers
