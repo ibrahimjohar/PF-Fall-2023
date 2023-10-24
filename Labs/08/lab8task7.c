@@ -33,7 +33,7 @@ int main()
 
     //output the discount amount whilst calling calculateDiscount function
     printf("The discount is: $%.2f", calculateDiscount(totalAmt, nVisits));
-}
+}//end main()
 
 float calculateDiscount(int totalAmt, int nVisits)//function to calculate discount amount 
 {
