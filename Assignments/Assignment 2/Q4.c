@@ -25,7 +25,7 @@ bool solve(char arr[][5], char temp[][5], int m, int n, int x, int y) {
     if (solve(arr, temp, m, n, x + 1, y) || solve(arr, temp, m, n, x, y + 1))
         return true;
 
-    //If none of the directions lead to the exit, backtrack
+    //If none of the directions lead to the exit position, we will backtrack
     temp[x][y] = '0';
     return false;
 }//end solve function
