@@ -142,10 +142,6 @@ int main()
         if (eflag == 0)
         {
             printf("No evening flight available on day %d\n", nDay);
-            for (int i = 0; i < 5; i++)
-            {
-                printf("%d ", flightAvailE[i]);
-            }
         }
 
         break;
