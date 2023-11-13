@@ -27,6 +27,15 @@ Q7:
 ![Q7-2](https://github.com/ibrahimjohar/PfFall23/assets/34939623/5e72d296-12b3-4461-8d82-5d57671c50b8)
 ![Q7-1](https://github.com/ibrahimjohar/PfFall23/assets/34939623/f6402e1c-fd31-4e11-8437-8e39ab69d898)
 
+Q8:
+![Q8-1](https://github.com/ibrahimjohar/PfFall23/assets/34939623/55f6772d-9ae2-4ef1-b43d-1bc512cda782)
+![Q8-2](https://github.com/ibrahimjohar/PfFall23/assets/34939623/93ff55eb-8e12-4ecd-86b9-2a87b3e404c4)
+
+Q9:
+![Q9-1](https://github.com/ibrahimjohar/PfFall23/assets/34939623/489cb442-2067-4826-924e-8cf94b21f946)
+![Q9-2](https://github.com/ibrahimjohar/PfFall23/assets/34939623/81447ca1-f662-4b89-8d44-f625f9504413)
+![Q9-3](https://github.com/ibrahimjohar/PfFall23/assets/34939623/06eafa7e-579d-4c2e-9b5b-20eee1f571fe)
+
 
 
 
