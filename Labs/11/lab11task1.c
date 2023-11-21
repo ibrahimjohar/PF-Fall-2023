@@ -1,5 +1,5 @@
 /*
-*   Programmer: Ibrahim Johar Farooqi
+*   Programmer: Ibrahim Johar Farooqi (23K-0074)
 *   Description: Create a structure to specify data on students given below:
                  Roll number, Name, Department, Course, Year of joining Assume that there are not more than 450 students in the college.
                     ● Print names of all students who joined in a particular year.
@@ -19,18 +19,21 @@ int main()
         char dep[450];
         char course[450];
         int yearJoin;
-    };
+    }; //struct definition
     
+    //input number of students
     int stdnum;
     printf("Enter the number of students: ");
     scanf("%d", &stdnum);
     
+    //check if number of students does not exceed 450
     if (stdnum > 450)
     {
         printf("Number of students exceeds the maximum limit.\n");
         return 1;
     }
     
+    //input year and roll no
     int yearCheck;
     printf("Enter Year to check students who joined in that year: ");
     scanf("%d", &yearCheck);
@@ -38,8 +41,9 @@ int main()
     printf("Enter Roll No. to display student's data: ");
     scanf("%d", &rollCheck);
 
-    struct data myData[450];
+    struct data myData[450]; //initialise struct data
 
+    //input 
     for(int i=0; i<stdnum; i++)
     {
         printf("Enter student %d name: ", i+1);
@@ -61,6 +65,7 @@ int main()
 
     printf("\n");
 
+    //print names of student in same year
     printf("Students who joined in %d are: \n", yearCheck);
     for(int i=0; i<stdnum; i++)
     {
@@ -71,7 +76,8 @@ int main()
     }
     
     printf("\n");
-
+    
+    //print data of student whose roll no was taken as input
     for(int i = 0; i<stdnum; i++)
     {
         if (myData[i].rollno == rollCheck)
@@ -85,4 +91,4 @@ int main()
     }
     
     return 0;
-}
+}//end main()
