@@ -10,7 +10,7 @@
 
 int main()
 {
-    FILE* fptr = fopen("lab11task1file.csv", "r");
+    FILE* fptr = fopen("lab12task1file.csv", "r");
 
     if (fptr == NULL)
     {
