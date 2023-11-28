@@ -1,6 +1,6 @@
 /*
 *  Name: Ibrahim Johar Farooqi
-*  Date: 15 November 2023
+*  Date: 16 November 2023
 *  Description: Write a C program that implements a function to swap the values of two variables using only pointers (without using any arithmetic or temporary variables).
                 Your function should be generic and work for variables of different data types. Hint: Use bitwise operator XOR.
 */
