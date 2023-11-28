@@ -1,9 +1,16 @@
+/*
+*   Programmer: Ibrahim Johar Farooqi
+*   Date: 28 November 2023
+*   Description: Create a structure to keep record of each course (course code, course name, course gpa, semester, credit hours).
+		 Make a console application that allows to input course infromation and save data to a file.
+		 Then it has an option to view transcript, calculate CGPA and SGPAs.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
-
 #define MAX_COURSES 10
 
-// Structure to store course information
+// Structure definition 
 struct Course 
 {
     char code[10];
