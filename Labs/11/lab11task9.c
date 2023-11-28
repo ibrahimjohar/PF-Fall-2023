@@ -1,3 +1,16 @@
+/*
+*   Programmer: Ibrahim Johar Farooqi
+*   Date: 22 November 2023
+*   Description: You need to implement the following 2 struct.
+                    struct Student{}; struct Register{};
+                    Student contains attributes StudentId, FirstName, LastName, cellno, email.
+                    Register contains the attributes CourseId, CourseName.
+                    Now you need to inherit the Register struct in Student struct. It means that the student struct holds the
+                    variable of Register struct variable. After that you need to take input for 5 students and then print them
+                    [Hint: Declare array of struct Student std[5]; for 5 students ]
+*/
+
+
 #include <stdio.h>
 #include <string.h>
 
