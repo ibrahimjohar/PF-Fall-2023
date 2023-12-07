@@ -43,7 +43,7 @@ int mergerecord()
     //check for successful file opening
     if (ptr1 == NULL || ptr2 == NULL || ptr3 == NULL)
     {
-        printf("Error in opening one of the files\n");
+        printf("Unable to open files.\n");
         return 1;
     }
 
@@ -92,7 +92,7 @@ int mergerecord()
     //check for successful file opening
     if (ptr1 == NULL || ptr2 == NULL || ptr3 == NULL)
     {
-        printf("Error in opening one of the files\n");
+        printf("Unable to open files.\n");
         return 1;
     }
 
@@ -114,7 +114,7 @@ int mergerecord()
     //check for successful file opening
     if (ptr3 == NULL)
     {
-        printf("File could not be opened.");
+        printf("Unable to open files.\n");
         return 1;
     }
 
