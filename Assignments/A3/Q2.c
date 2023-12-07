@@ -16,9 +16,18 @@ void shufflenames(char names[][20], int size);
 void randomAssign(struct Employee employees[], char roles[][20], int nRoles);
 int deptsum(struct Employee employees[]);
 void printdepartment(struct Employee employees[]);
-int randomorder(int min, int max)
+
+void shuffleorder(int array[], int size)
 {
-    return rand() % (max - min + 1) + min;
+    srand((unsigned int)time(NULL));
+
+    for(int i = size - 1; i > 0; i--)
+    {
+        int j = rand() % (i+1);
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp; 
+    }
 }
 
 int main()
@@ -63,36 +72,77 @@ int main()
         strcpy(logistics[i].name, names[i + 15]);
     }
 
-    int sum_hr = deptsum(hr);
-    int sum_finance = deptsum(finance);
-    int sum_marketing = deptsum(marketing);
-    int sum_logistics = deptsum(logistics);
+    int dept_index[] = {0, 1, 2, 3};
 
-    printf("Department Sums: \n");
-    printf("HR: %d\n", sum_hr);
-    printf("Finance: %d\n", sum_finance);
-    printf("Marketing: %d\n", sum_marketing);
-    printf("Logistics: %d\n", sum_logistics);
+    shuffleorder(dept_index, sizeof(dept_index)/sizeof(dept_index[0]));
 
-    printf("Best Department: ");
+    int sum_hr, sum_finance, sum_marketing, sum_logistics;
+
+    if (dept_index[0]==0)
+    {
+        sum_finance = deptsum(finance);
+        sum_marketing = deptsum(marketing);
+        sum_logistics = deptsum(logistics);
+        sum_hr = deptsum(hr);
+    }
+    else if(dept_index[0]==1)
+    {
+        sum_hr = deptsum(hr);
+        sum_marketing = deptsum(marketing);
+        sum_logistics = deptsum(logistics);
+        sum_finance = deptsum(finance);
+    }
+    else if(dept_index[0]==2)
+    {
+        sum_hr = deptsum(hr);
+        sum_finance = deptsum(finance);
+        sum_logistics = deptsum(logistics);
+        sum_marketing = deptsum(marketing);
+    }
+    else if(dept_index[0]==3)
+    {
+        sum_hr = deptsum(hr);
+        sum_finance = deptsum(finance);
+        sum_marketing = deptsum(marketing);
+        sum_logistics = deptsum(logistics);
+    }
+
+    //int sum_hr = deptsum(hr);
+    //int sum_finance = deptsum(finance);
+    //int sum_marketing = deptsum(marketing);
+    //int sum_logistics = deptsum(logistics);
+
+    printf("-----------------DEPARTMENT SUMS:----------------\n");
+    printf("-------------------------------------------------\n");
+    printf("---------------------HR: %d-----------------\n", sum_hr);
+    printf("----------------Finance: %d-----------------\n", sum_finance);
+    printf("--------------Marketing: %d-----------------\n", sum_marketing);
+    printf("--------------Logistics: %d-----------------\n", sum_logistics);
+    printf("-------------------------------------------------\n");
+
+    printf("-------------BEST DEPARTMENT: ");
     if(sum_hr > sum_finance && sum_hr > sum_marketing && sum_hr > sum_logistics)
     {
-        printf("HR\n");
+        printf("HR-------------------\n");
+        printf("-----------------------------------------------\n");
         printdepartment(hr);
     }
     else if(sum_finance > sum_hr && sum_finance > sum_marketing && sum_finance > sum_logistics)
     {
-        printf("Finance\n");
+        printf("Finance--------------\n");
+        printf("-------------------------------------------------\n");
         printdepartment(finance);
     }
     else if(sum_marketing > sum_hr && sum_marketing > sum_finance && sum_marketing > sum_logistics)
     {
-        printf("Marketing\n");
+        printf("Marketing------------\n");
+        printf("-----------------------------------------------\n");
         printdepartment(marketing);
     }
     else if(sum_logistics > sum_hr && sum_logistics > sum_finance && sum_logistics > sum_marketing)
     {
-        printf("Logistics\n");
+        printf("Logistics------------\n");
+        printf("-------------------------------------------------\n");
         printdepartment(logistics);
     }
 
