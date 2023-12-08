@@ -1,9 +1,21 @@
+/*
+*   Programmer: Ibrahim Johar Farooqi
+*   Date: 5 December 2023
+*   Description:
+                Question 2:
+                Create three text files named Department.txt, Personal.txt and Combine.txt. The Personal.txt file contains ID and Name. 
+                Whereas the Department.txt file contains ID and Salary. 
+                Write a function that takes input as record IDs and mergesthe details from both personal and department files and then add this entry into the Combine.txt file (ID, Name, Salary).
+*/
+
 #include <stdio.h>
 
 int mergerecord(); //function prototype 
 
 int main()
 {
+    printf("Ibrahim Johar Farooqi (23K-0074)\n\n");
+    
     //file pointers declaration and initialisation
     FILE *personal = fopen("Personal.txt", "a+");
     FILE *department = fopen("Department.txt", "a+");
