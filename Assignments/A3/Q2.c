@@ -39,7 +39,7 @@ void shuffleorder(int array[], int size);
 
 int main()
 {
-    printf("Ibrahim Johar Farooqi (23K-0074)\n\n");
+    printf("Programmer: Ibrahim Johar Farooqi\nStudent ID: 23K-0074\n\n");
     //declaration of departments arrays within the employee structure
     struct Employee hr[5];
     struct Employee finance[5];
