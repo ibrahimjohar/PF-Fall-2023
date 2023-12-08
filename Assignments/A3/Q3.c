@@ -14,7 +14,7 @@ int mergerecord(); //function prototype
 
 int main()
 {
-    printf("Programmer: Ibrahim Johar Farooqi\nStudent ID:(23K-0074)\n\n");
+    printf("Programmer: Ibrahim Johar Farooqi\nStudent ID: 23K-0074\n\n");
     
     //file pointers declaration and initialisation
     FILE *personal = fopen("Personal.txt", "a+");
