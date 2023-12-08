@@ -1,158 +1,200 @@
-# include<stdio.h>
-# include<stdlib.h>
+/*
+*   Programmer: Ibrahim Johar Farooqi
+*   Date: 5 December 2023
+*   Description: Question 1
+*                Write a C program that takes a matrix from a file and filename is given as command line argument (use argc and argv).
+*                The dimensions can be (2x2, 4x4, and 8x8). Make sure that your program tackles any of the dimensions.
+*                Your program should compute the max value from each 2 x 2 submatrix and save it into a new matrix.
+*/
 
-//Creating a function to convert 8x8 array to 4x4 and then to 2x2:
-void convertTo4x4(int EightbyEight[8][8], int FourbyFour[4][4], int TwobyTwo[2][2], int OnebyOne, int x) 
+#include <stdio.h>
+#include <stdlib.h>
+
+//function prototypes
+void readmatrixfile(FILE *fp, int mat[][8]);
+void eightbyeight(int matrix[][8]);
+void fourbyfour(int matrix[][8]);
+void twobytwo(int matrix[][8]);
+void printmatrix(int matrix[][8], int size);
+
+int main(int argc, char *argv[]) //use of argc & argv
 {
-    int n = x / 2;
+    printf("Programmer: Ibrahim Johar Farooqi\nStudent ID: 23K-0074\n\n");
 
-    for (int i = 0; i < n; i++)
+    //declaring variable for size of matrix
+    int size;
+    //declaring matrix to read matrix from file
+    int mat[8][8];
+    //initializing size from command line 
+    size = atoi(argv[1]);
+    //initializing file pointer from command line
+    FILE *fp = fopen(argv[2], "r");
+    //check for successful file opening
+    if (fp == NULL)
     {
-        for (int j = 0; j < n; j++) 
-        {
-           int max = EightbyEight[2 * i][2 * j];
-
-            if (EightbyEight[2 * i][2 * j + 1] > max)
-            {
-                max = EightbyEight[2 * i][2 * j + 1];
-            }
-            if (EightbyEight[2 * i + 1][2 * j] > max)
-            {   
-                max = EightbyEight[2 * i + 1][2 * j];
-            }
-            if (EightbyEight[2 * i + 1][2 * j + 1] > max)
-            {
-                max = EightbyEight[2 * i + 1][2 * j + 1];
-            }
-            FourbyFour[i][j] = max;
-        }
+        printf("Error opening file!\n");
+        return 1;
     }
-    //displaying the four by four array formed: 
-    printf("\nThe 4 by 4 array formed is: \n");
-    for(int i=0; i<n; i++)
+    else
     {
-        for(int j=0; j<n; j++)
+        readmatrixfile(fp, mat); //call function to read matrix from file
+        switch (size)
         {
-            printf("%d\t", FourbyFour[i][j]);
-        }
-        printf("\n\n");
-    }
-
-    //using the convert to 2x2 function to convert 4x4 to 2x2:
-    convertTo2x2(FourbyFour, TwobyTwo, OnebyOne, x/2);
-}
-
-//function for converting a 4x4 matrix ti 2x2: 
-void convertTo2x2(int FourbyFour[4][4], int TwobyTwo[2][2], int OnebyOne, int x) 
-{
-    int y = x / 2;
-    int max = FourbyFour[0][0];
-    for (int i = 0; i<y; i++)
-    {
-        for(int j = 0; j<y; j++)
-        {
-            if(FourbyFour[i][j+1] > max)
-            {
-                max = FourbyFour[i][j+1];
-            }
-            if(FourbyFour[i+1][j] > max)
-            {
-                max = FourbyFour[i+1][j];
-            }
-            if(FourbyFour[i+1][j+1] > max)
-            {
-                max = FourbyFour[i+1][j+1];
-            }
-            
-            TwobyTwo[i][j] = max;
-        }
-    }
-    //displaying the 2 by 2 array formed:
-    printf("\nThe 2 by 2 array formed is: \n");
-    for(int i=0; i<y; i++)
-    {
-        for(int j=0; j<y; j++)
-        {
-            printf("%d\t", TwobyTwo[i][j]);
-        }
-        printf("\n\n");
-    }
-
-    convertTo1x1(TwobyTwo, OnebyOne, x);
-}
-
-//converting the 2x2 to 1x1 or finding the max element of 2x2:
-void convertTo1x1(int TwobyTwo[2][2], int OnebyOne, int x)
-{
-    int max = TwobyTwo[0][0];
-    for(int i = 0; i<x; i++)
-    {
-        for(int j=0; j<x; j++)
-        {
-           if (TwobyTwo[i][j] > max) 
-            {
-                max = TwobyTwo[i][j];
-            } 
-        }
-    }
-    OnebyOne = max;
-    printf("The max element of 2 by 2 array is: %d", OnebyOne);
-}
-
-int main()
-{
-    int x;
-    int EightbyEight[8][8], FourbyFour[4][4], TwobyTwo[2][2], OnebyOne;
-
-    //taking matrix size as input:
-    printf("Input order of the square matrix (2, 4, or 8)\n");
-    scanf("%d", &x);
-
-
-    switch (x)
-    {
         case 8:
-           printf("Enter the elements of the matrix:\n");
-           for (int i = 0; i < x; i++)
-            {
-              for (int j = 0; j < x; j++)
-                {
-                  printf("Input element [%d %d]: ", i + 1, j + 1);
-                  scanf("%d", &EightbyEight[i][j]);
-                }
-            }
-            convertTo4x4(EightbyEight, FourbyFour, TwobyTwo, OnebyOne, x);
+            printmatrix(mat, size); //call function to print original 'size' matrix
+            eightbyeight(mat); //call function to process 8x8 matrix's submatrix
             break;
-            
         case 4:
-           printf("Enter the elements of the matrix: \n");
-           for(int i=0; i<x; i++)
-            {
-              for (int j = 0; j < x; j++)
-                {
-                  printf("Input element [%d %d]: ", i+1, j+1);
-                  scanf("%d", &FourbyFour[i][j]);
-                }
-            }
-            convertTo2x2(FourbyFour, TwobyTwo, OnebyOne, x);
+            printmatrix(mat, size); //call function to print original 'size' matrix
+            fourbyfour(mat); //call function to process 4x4 matrix's submatrix
             break;
-            
         case 2:
-           printf("Enter elements of the matrix: \n");
-           for (int i = 0; i < x; i++)
+            printmatrix(mat, size); //call function to print original 'size' matrix
+            twobytwo(mat); //call function to process 2x2 matrix's submatrix
+            break;
+        default:
+            printf("Enter a valid size of (2 or 4 or 8)!\n"); //invalid size input message
+            break;
+        }
+    }
+
+    return 0;
+} //end main()
+
+//function definition for processing a 2x2 matrix
+void twobytwo(int matrix[][8])
+{
+    int maxVal;
+    maxVal = matrix[0][0];
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            if (matrix[i][j] > maxVal)
             {
-                for(int j=0; j<x; j++)
+                maxVal = matrix[i][j];
+            }
+        }
+    }
+
+    printf("Submatrix with maximum value: %d", maxVal);
+}//end function twobytwo
+
+//function definition for processing a 4x4 matrix
+void fourbyfour(int matrix[][8])
+{
+    int finalmatrix[2][2]; //array declared to store highest values from 2x2 submatrices
+    int maxVal;
+
+    for (int i = 0; i < 4; i += 2)
+    {
+        for (int j = 0; j < 4; j +=2)
+        {
+            maxVal = matrix[i][j];
+            for (int k = i; k < i + 2; k++)
+            {
+                for (int l = j; l < j + 2; l++)
                 {
-                    printf("Input Element [%d %d]: ",i+1, j+1);
-                    scanf("%d", &TwobyTwo[i][j]);
+                    if (matrix[k][l] > maxVal) //determine the highest value among the 2x2 submatrix
+                    {
+                        maxVal = matrix[k][l];
+                    }
                 }
             }
-            convertTo1x1(TwobyTwo, OnebyOne, x);
-            break;
-            
-        default:
-          printf("Invalid order of matrix");
-          break;
+            finalmatrix[i/2][j/2] = maxVal; //store the highest value in final matrix
+        }
     }
-    return 0;
-}
+
+    printf("Submatrix with maximum values: \n");
+    //print final matrix with highest values
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("%d\t", finalmatrix[i][j]);
+        }
+        printf("\n");
+    }
+}//end function fourbyfour
+
+//function definition for processing a 8x8 matrix
+void eightbyeight(int matrix[][8])
+{
+    int finalmatrix[4][4]; //array declared to store highest values from 2x2 submatrices
+    int maxVal;
+
+    for (int i = 0; i < 8; i += 2)
+    {
+        for (int j = 0; j < 8; j += 2)
+        {
+            maxVal = matrix[i][j];
+            for (int k = i; k < i + 2; k++)
+            {
+                for (int l = j; l < j + 2; l++)
+                {
+                    if (matrix[k][l] > maxVal) //determine the highest value among the 2x2 submatrix
+                    {
+                        maxVal = matrix[k][l];
+                    }
+                }
+            }
+            finalmatrix[i/2][j/2] = maxVal; //store the highest value in final matrix
+        }
+    }
+
+    printf("Submatrix with maximum values: \n");
+    //print final matrix with highest values
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            printf("%d\t", finalmatrix[i][j]);
+        }
+        printf("\n");
+    }
+}//end function eightbyeight
+
+//function definition to read matrix from file
+void readmatrixfile(FILE *fp, int mat[][8])
+{
+    int row = 0;
+    //check for end of file
+    while (!feof(fp))
+    {
+        if (feof(fp))
+        {
+            printf("Error reading file.\n");
+        }
+
+        for (int j = 0; j < 8; j++)
+        {
+            if (fscanf(fp, "%d", &mat[row][j]) == EOF) //store individual integers from file into the 2d array whilst checking for EOF
+            {
+                break;
+            }
+        }
+
+        row++;
+        if (row == 8) //check if row size does not exceed 8 rows
+        {
+            break;
+        }
+    }
+
+    fclose(fp); //close the file
+}//end function readmatrixfile
+
+//function definition to print matrices
+void printmatrix(int matrix[][8], int size)
+{
+    printf("Matrix of %dx%d\n", size, size);
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            printf("%d\t", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}//end function printmatrix
