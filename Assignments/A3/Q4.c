@@ -1,39 +1,44 @@
+/*
+*   Programmer: Ibrahim Johar Farooqi
+*   Date: 5 December 2023
+*   Description: Question 4
+*                a. Display the details of the workers having a maximum salary for each department.
+*                b. Fetch departments along with the total salaries paid for each of them.
+*/
+
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_LENGTH 20
-#define MAX_WORKERS 8
-#define MAX_BONUSES 5
-#define MAX_TILES 5
-
-typedef struct
+//declaration of structure for Worker
+struct Worker
 {
-    int workerrefID;
-    char workertitle[MAX_LENGTH];
-    char affectedfrom[MAX_LENGTH];
-} 
-JobDetails;
-
-typedef struct 
-{
-    int workerrefID;
-    char bonusdate[MAX_LENGTH];
-    int bonusAmount;
-} 
-Bonus;
-
-typedef struct Worker
-{
-    int id;
-    char firstname[MAX_LENGTH];
-    char lastname[MAX_LENGTH];
+    int workerid;
+    char firstname[20];
+    char lastname[20];
     int salary;
-    char joiningdate[MAX_LENGTH];
-    char department[MAX_LENGTH];
-}
- Worker;
+    char joiningdate[25];
+    char department[20];
+};
 
-Worker workers[MAX_WORKERS] = {
+//declaration of structure for Bonus
+struct Bonus
+{
+    int workerid;
+    char bonusdate[25];
+    int bonusamount;
+};
+
+//declaration of structure for Title
+struct Title
+{
+    int workerid;
+    char workertitle[20];
+    char afftectedfrom[25];
+};
+
+//initialization of workers array
+struct Worker workers[8] = 
+{
     {1, "Monika", "Arora", 10000, "2014-02-20 09:00:00", "HR"},
     {2, "Niharika", "Verma", 80000, "2014-06-11 09:00:00", "Admin"},
     {3, "Vishal", "Singhal", 60000, "2014-02-20 09:00:00", "HR"},
@@ -41,18 +46,22 @@ Worker workers[MAX_WORKERS] = {
     {5, "Vivek", "Bhati", 500000, "2014-06-11 09:00:00", "Admin"},
     {6, "Vipul", "Diwan", 200000, "2014-06-11 09:00:00", "Account"},
     {7, "Satish", "Kumar", 75000, "2014-01-20 09:00:00", "Account"},
-    {8, "Geetka", "Chauhan", 90000, "2014-04-11 09:00:00", "Admin"},
+    {8, "Geetka", "Chauhan", 90000, "2014-04-11 09:00:00", "Admin"}
 };
 
-Bonus bonuses[MAX_BONUSES] = {
+//initialization of bonuses array
+struct Bonus bonuses[5] = 
+{
     {1, "2016-02-20 00.00.00", 5000},
     {2, "2016-06-11 00:00:00", 3000},
     {3, "2016-02-20 00 00 00", 4000},
     {1, "2016-02-20 00:00:00", 4500},
-    {2, "2016-06-11 00:00:00", 3500},
+    {2, "2016-06-11 00:00:00", 3500}
 };
 
-JobDetails title[MAX_WORKERS] = {
+//initialization of titles array
+struct Title titles[8] =
+{
     {1, "Manager", "2016-02-20 00:00:00"},
     {2, "Executive", "2016-06-11 00:00:00"},
     {8, "Executive", "2016-06-11 00:00:00"},
@@ -60,82 +69,102 @@ JobDetails title[MAX_WORKERS] = {
     {4, "Asst.Manager", "2016-06-11 00:00:00"},
     {7, "Executive", "2016-06-11 00:00:00"},
     {6, "Lead", "2016-06-11 00:00:00"},
-    {3, "Lead", "2016-06-11 00:00:00"},
+    {3, "Lead", "2016-06-11 00:00:00"}
 };
 
-void max_salary() 
-{
-    int maxHR = -1, maxAD = -1, maxACC = -1;
-    int idHR = -1, idAD = -1, idACC = -1;
+//function prototypes
+void maxsalary();
+void totalsalaries();
 
-    for (int i = 0; i < MAX_WORKERS; i++) 
+int main()
+{
+    printf("Programmer: Ibrahim Johar Farooqi\nStudent ID: 23K-0074\n\n");
+    printf("Maximum Salary Individuals from each department:\n\n");
+    maxsalary(); //call function to process and print maximum salary individuals from each department
+    totalsalaries(); //call function to print total salaries of each department
+}
+
+//function definition to calculate maximum salary in a department
+void maxsalary()
+{
+    //declaration and initialisation of variables to store the maximum salary of each department and it's respective id
+    int max_hr = -1, max_account = -1, max_admin = -1;
+    int id_hr = -1, id_account = -1, id_admin = -1;
+
+    for (int i = 0; i < 8; i++)
     {
-        if (strcmp(workers[i].department, "HR") == 0) 
+        if (strcmp(workers[i].department, "HR") == 0) //check if department is HR
         {
-            if (workers[i].salary > maxHR) 
+            if (workers[i].salary > max_hr)
             {
-                maxHR = workers[i].salary;
-                idHR = i;
+                max_hr = workers[i].salary;
+                id_hr = i;
             }
-        } 
-        else if (strcmp(workers[i].department, "Admin") == 0) 
+        }
+        else if (strcmp(workers[i].department, "Admin") == 0) //check if department is Admin
         {
-            if (workers[i].salary > maxAD) 
+            if (workers[i].salary > max_admin)
             {
-                maxAD = workers[i].salary;
-                idAD = i;
+                max_admin = workers[i].salary;
+                id_admin = i;
             }
-        } 
-        else if (strcmp(workers[i].department, "Account") == 0) 
+        }
+        else if (strcmp(workers[i].department, "Account") == 0) //check if department is Account
         {
-            if (workers[i].salary > maxACC) 
+            if (workers[i].salary > max_account)
             {
-                maxACC = workers[i].salary;
-                idACC = i;
-            }
+                max_account = workers[i].salary;
+                id_account = i;
+            }            
         }
     }
 
-    if (idHR != -1) 
+    //print in tabular form
+    if (id_hr != -1)  
     {
-        printf("Max Salary in HR: \n%d %s %s %d %s %s\n", workers[idHR].id, workers[idHR].firstname, workers[idHR].lastname, workers[idHR].salary, workers[idHR].joiningdate, workers[idHR].department);
+        printf("----------------------------------------------------------------------------\n");
+        printf("|  %d  |  %s  |  %s  |  %d  |  %s  |     %s    |\n", workers[id_hr].workerid, workers[id_hr].firstname, workers[id_hr].lastname,
+            workers[id_hr].salary, workers[id_hr].joiningdate, workers[id_hr].department);  
     }
 
-    if (idACC != -1)
+    if (id_admin != -1)
     {
-        printf("Max Salary in Account: \n%d %s %s %d %s %s\n", workers[idACC].id, workers[idACC].firstname, workers[idACC].lastname, workers[idACC].salary, workers[idACC].joiningdate, workers[idACC].department);
+        printf("----------------------------------------------------------------------------\n");
+        printf("|  %d  |  %s |  %s    |  %d |  %s  |   %s   |\n", workers[id_admin].workerid, workers[id_admin].firstname, workers[id_admin].lastname,
+            workers[id_admin].salary, workers[id_admin].joiningdate, workers[id_admin].department);  
     }
 
-    if (idAD != -1) 
-    {
-        printf("Max Salary in Admin: \n%d %s %s %d %s %s\n", workers[idAD].id, workers[idAD].firstname, workers[idAD].lastname, workers[idAD].salary, workers[idAD].joiningdate, workers[idAD].department);
-    }
-}
 
-void total_salaries() 
+    if (id_account != -1)
+    {
+        printf("----------------------------------------------------------------------------\n");
+        printf("|  %d  |  %s   |  %s    |  %d |  %s  |  %s  |\n", workers[id_account].workerid, workers[id_account].firstname, workers[id_account].lastname,
+            workers[id_account].salary, workers[id_account].joiningdate, workers[id_account].department);  
+        printf("----------------------------------------------------------------------------\n\n");
+    }
+}//end function maxsalaries
+
+//function definition to calculate the total salary of each department
+void totalsalaries()
 {
-    int totalHR = 0, totalACC = 0, totalAD = 0;
-
-    for (int i = 0; i < MAX_WORKERS; i++) 
+    int sum_hr = 0, sum_account = 0, sum_admin = 0; //declaration and initialization of variables to store totals of each dept's salaries
+    for (int i = 0; i < 8; i++)
     {
-        if (strcmp(workers[i].department, "HR") == 0) 
+        if (strcmp(workers[i].department, "HR") == 0) //sum for HR dept
         {
-            totalHR += workers[i].salary;
-        } else if (strcmp(workers[i].department, "Account") == 0) 
+            sum_hr = sum_hr + workers[i].salary;
+        }
+        else if (strcmp(workers[i].department, "Account") == 0) //sum for Account dept
         {
-            totalACC += workers[i].salary;
-        } else if (strcmp(workers[i].department, "Admin") == 0) 
+            sum_account = sum_account + workers[i].salary;
+        }
+        else if (strcmp(workers[i].department, "Admin") == 0) //sum for Admin dept
         {
-            totalAD += workers[i].salary;
+            sum_admin = sum_admin + workers[i].salary;
         }
     }
 
-    printf("Total Salaries:\nAdmin: %d\nAccount: %d\nHR: %d\n", totalAD, totalACC, totalHR);
-}
+    //print the total salaries
+    printf("The total salaries are:\nHR - %d\nAdmin - %d\nAccount - %d\n", sum_hr, sum_admin, sum_account);
+}//end function totalsalaries
 
-int main() 
-{
-    max_salary();
-    total_salaries();
-    return 0;
-}
