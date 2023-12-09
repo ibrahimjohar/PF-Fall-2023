@@ -1,6 +1,7 @@
 # Ibrahim Johar Farooqi (23K-0074)
+## Assignment 3
 ## Q1:
-### 2x2 Matrix:
+### 2x2:
 ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/422d86de-866e-4f9b-bbc3-ffc345e172a0)
 
 ### 4x4:
