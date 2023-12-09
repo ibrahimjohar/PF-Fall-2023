@@ -1,8 +1,11 @@
 ## Ibrahim Johar Farooqi (23K-0074)
 Q1:
 Q2:
-Q3: Create three text files named Department.txt, Personal.txt and Combine.txt. The Personal.txt file contains ID and Name. Whereas the Department.txt file contains ID and Salary. 
-    Write a function that takes input as record IDs and mergesthe details from both personal and department files and then add this entry into the Combine.txt file (ID, Name, Salary).
+Q3: 
+Before:
+![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/b0664e3b-705b-4e87-9ae8-f7c33eeaca1c)
 
-Output: 
 ![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/5fbc872f-cfb7-4f8b-9282-1eb6647d16c1)
+Code Output in Terminal:
+![image](https://github.com/ibrahimjohar/PfFall23/assets/34939623/40b21528-345d-4f4b-88b1-5f09dae6f3c1)
+
